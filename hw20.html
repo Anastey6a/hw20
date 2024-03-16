@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function calculateAverage(arr) {
+            let sum = 0;
+            let count = 0;
+            for (const item of arr) {
+                if (typeof item === 'number') {
+                    sum += item;
+                    count++;
+                }
+            }
+            if (count === 0) {
+                return 'Масив не містить числових елементів';
+            }
+            return sum / count;
+        }
+
+        const array = [1, 'hello', 3, true, 5];
+        const average = calculateAverage(array);
+        console.log(average); // Результат: 3
+        function doMath(x, znak, y) {
+                switch (znak) {
+                    case '+':
+                        return x + y;
+                    case '-':
+                        return x - y;
+                    case '*':
+                        return x * y;
+                    case '/':
+                        return x / y;
+                    case '%':
+                        return x % y;
+                    case '^':
+                        return Math.pow(x, y);
+                    default:
+                        return 'Непідтримуваний знак';
+                }
+            }
+
+            const x = 5;
+            const y = 3;
+            const operation = '+';
+            const result = doMath(x, operation, y);
+            console.log(result); // Результат: 8
+    function fillArray(rows, cols) {
+        const arr = [];
+        for (let i = 0; i < rows; i++) {
+            const innerArr = [];
+            for (let j = 0; j < cols; j++) {
+                const value = prompt(`Введіть значення для елементу [${i}][${j}]`);
+                innerArr.push(value);
+            }
+            arr.push(innerArr);
+        }
+        return arr;
+    }
+
+    const rows = Number(prompt('Введіть кількість рядків:'));
+    const cols = Number(prompt('Введіть кількість стовпців:'));
+    const userArray = fillArray(rows, cols);
+    console.log(userArray);
+    function removeChars(str, charsToRemove) {
+        for (const char of charsToRemove) {
+            str = str.replace(new RegExp(char, 'g'), '');
+        }
+        return str;
+    }
+
+    const inputString = ' hello world';
+    const charsToRemove = ['l', 'd'];
+    const resultString = removeChars(inputString, charsToRemove);
+    console.log(resultString); // Результат: "heo wor"
+
+</script>
+<body>
+    
+</body>
+</html>
